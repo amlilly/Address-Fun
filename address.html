@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <b>Mailing Address</b>
+    <br><br>
+    <form>
+    Name:
+    <input type="text" name="shippingname">
+    <br>
+    City:
+    <input type="text" name="shippingcity">
+    <br>
+    <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+    <em>Check this box if Billing Address and Mailing Address are the same.</em>
+    <P>
+    <b>Billing Address</b>
+    <br><br>
+    Name:
+    <input type="text" name="billingname">
+    <br>
+    City:
+    <input type="text" name="billingcity">
+    </form>
+
+    <script>
+        function FillBilling(f) {
+            if(f.billingtoo.checked == true) {
+                f.billingname.value = f.shippingname.value;
+                f.billingcity.value = f.shippingcity.value;
+            }
+            else {
+                f.billingname.value = null;
+                f.billingcity.value = null;
+            }
+        }
+    </script>
+</body>
+</html>
